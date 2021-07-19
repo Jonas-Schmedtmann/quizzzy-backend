@@ -10,7 +10,7 @@ const questionSchema = new mongoose.Schema({
   explanation: {
     type: String,
     trim: true,
-    required: [true, "Question is requires a explanation!"],
+    required: [true, "Question requires a explanation!"],
   },
   questionNo: {
     type: Number,
@@ -44,6 +44,7 @@ const questionSchema = new mongoose.Schema({
   },
   userId: String,
   image: String,
+  description: String,
 });
 
 const Question = mongoose.model("Question", questionSchema);
