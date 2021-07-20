@@ -70,3 +70,31 @@ exports.getQuestionCount = catchAsync(async (req, res, next) => {
     },
   });
 });
+
+exports.updateHTMLQuestionCount = catchAsync(async (req, res, next) => {
+  const updatedCount = await Settings.findById(process.env.DATABASE_SETTINGS);
+
+  if (!updatedCount) {
+    return next(new AppError(`Please enter a a valid entry.`, 404));
+  }
+
+  updatedCount.htmlquestioncount += 1;
+  await updatedCount.save();
+
+  next();
+});
+
+exports.getHTMLQuestionCount = catchAsync(async (req, res, next) => {
+  const settings = await Settings.findById(process.env.DATABASE_SETTINGS);
+
+  if (!settings) {
+    return next(new AppError(`Please enter a a valid entry.`, 404));
+  }
+
+  res.status(200).json({
+    status: "success",
+    data: {
+      htmlquestioncount: settings.htmlquestioncount,
+    },
+  });
+});

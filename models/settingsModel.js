@@ -6,9 +6,8 @@ const settingsSchema = new mongoose.Schema({
     type: String,
     trim: true,
   },
-  questionChannelId: String,
-  answerChannelId: String,
   questionCount: Number,
+  htmlquestioncount: Number,
 });
 
 const Settings = mongoose.model("Settings", settingsSchema);

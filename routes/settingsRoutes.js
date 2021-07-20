@@ -12,6 +12,11 @@ router
   .patch(settingsController.updateQuestionCount);
 
 router
+  .route("/htmlquestioncount")
+  .get(settingsController.getHTMLQuestionCount)
+  .patch(settingsController.updateHTMLQuestionCount);
+
+router
   .route("/:property")
   .get(settingsController.getProperty)
   .patch(settingsController.updateProperty);
