@@ -9,6 +9,10 @@ router
   .route("/ifanswered/:userId/:questionId")
   .get(HTMLAnswerController.checkIfAnswered);
 
+router
+  .route("/ifchecked/:userId/:questionId")
+  .get(HTMLAnswerController.checkIfchecked);
+
 router.route("/:userId/:questionId").patch(HTMLAnswerController.updateAnswer);
 
 module.exports = router;

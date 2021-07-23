@@ -6,9 +6,11 @@ const HTMLAnswerSchema = new mongoose.Schema({
     type: String,
     required: [true, "Answer without ID cannot be registerd!"],
   },
-  points: Number,
   questionId: String,
   userId: String,
+  points: Number,
+  message: String,
+  checkedBy: String,
 });
 
 const HTMLAnswer = mongoose.model("HTMLAnswer", HTMLAnswerSchema);

@@ -18,6 +18,18 @@ exports.checkIfAnswered = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.checkIfchecked = catchAsync(async (req, res, next) => {
+  const ifChecked = await HTMLAnswer.findOne({
+    userId: req.params.userId,
+    questionId: req.params.questionId,
+  });
+
+  res.status(200).json({
+    status: "success",
+    data: ifChecked,
+  });
+});
+
 exports.updateAnswer = catchAsync(async (req, res, next) => {
   const answer = await HTMLAnswer.findOneAndUpdate(
     {
