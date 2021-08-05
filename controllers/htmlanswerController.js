@@ -2,8 +2,8 @@ const HTMLAnswer = require("../models/htmlanswerModel");
 const handler = require("./handler");
 const catchAsync = require("../utils/catchAsync");
 
-// exports.getAllAnswers = handler.getAll(Answer);
-// exports.getAnswer = handler.getOne(Answer);
+exports.getAllAnswers = handler.getAll(HTMLAnswer);
+// exports.getAnswer = handler.getOne(HTMLAnswer);
 exports.postAnswer = handler.createOne(HTMLAnswer);
 
 exports.checkIfAnswered = catchAsync(async (req, res, next) => {

@@ -3,7 +3,10 @@ const HTMLAnswerController = require("../controllers/htmlanswerController");
 
 const router = express.Router();
 
-router.route("/").post(HTMLAnswerController.postAnswer);
+router
+  .route("/")
+  .get(HTMLAnswerController.getAllAnswers)
+  .post(HTMLAnswerController.postAnswer);
 
 router
   .route("/ifanswered/:userId/:questionId")

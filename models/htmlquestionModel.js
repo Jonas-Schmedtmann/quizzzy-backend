@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 
 // Schema
 const HTMLquestionSchema = new mongoose.Schema({
-  explanation: {
-    type: String,
-    trim: true,
-    required: [true, "Question requires a explanation!"],
-  },
   questionNo: {
     type: Number,
   },
